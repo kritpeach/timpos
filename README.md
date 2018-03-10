@@ -1,6 +1,6 @@
 # tim
 
-> Restaurant POS
+> Tim Restaurant POS (Management)
 
 ## Build Setup
 
