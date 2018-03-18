@@ -18,17 +18,17 @@ export default {
     },
     onSelectDate: {
       type: Function
+    },
+    date: {
+      type: String
     }
   },
   data() {
     return {
-      date: null,
       modal: false
     };
   },
   mounted() {
-    const now = new Date();
-    this.date = now.toISOString().split('T')[0];
     this.onSelectDate(this.date);
   },
   methods: {
