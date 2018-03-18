@@ -1,5 +1,23 @@
 import firebaseApp from "../connector/firebase";
 
+const generateSalesByCategory = (doneOrderLineItemList) => {
+  const salesByCategory = {};
+  doneOrderLineItemList.forEach(orderLineItem => {
+    Object.keys(orderLineItem.menu.categories).forEach(categoryId => {
+      if (salesByCategory[categoryId]) {
+        salesByCategory[categoryId].income += orderLineItem.quantity * orderLineItem.price.value;
+        salesByCategory[categoryId].quantity += orderLineItem.quantity;
+      } else {
+        salesByCategory[categoryId] = {
+          income: orderLineItem.quantity * orderLineItem.price.value,
+          quantity: orderLineItem.quantity,
+          categoryId
+        };
+      }
+    });
+  });
+  return Object.values(salesByCategory).sort((a, b) => b.quantity - a.quantity);
+};
 const getDashboardData = async (
   startDate,
   endDate,
@@ -52,13 +70,15 @@ const getDashboardData = async (
     };
   }, {});
   const sales = Object.values(orderGroupByMenuId).sort((a, b) => b.quantity - a.quantity);
+  const salesByCategory = generateSalesByCategory(doneOrderLineItemList);
   return {
     billCount,
     cancelOrderLineItemList,
     doneOrderLineItemList,
     orderLineItemList,
     income,
-    sales
+    sales,
+    salesByCategory
   };
 };
 

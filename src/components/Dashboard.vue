@@ -48,9 +48,14 @@
               </v-card-title>
             </v-card>
           </v-flex>
-          <v-flex xs12>
+          <v-flex xs8>
             <v-card>
               <bar-chart :height="350" :chart-data="salesChart" :options="chartOption"></bar-chart>
+            </v-card>
+          </v-flex>
+          <v-flex xs4>
+            <v-card>
+              <pie-chart :height="350" :chart-data="salesByCategoryChart" :options="{ maintainAspectRatio: false, responsive: true, title: { display: true, text: 'Sales by category'} }"></pie-chart>
             </v-card>
           </v-flex>
         </template>
@@ -64,6 +69,8 @@ import statistic from '../service/statistic';
 import categoryService from '../service/Category';
 import DatePicker from './DatePicker';
 import BarChart from './BarChart';
+import PieChart from './PieChart';
+import randomColor from '../util/ramdomColor';
 export default {
   data() {
     return {
@@ -74,6 +81,7 @@ export default {
       loading: false,
       statistic: null,
       salesChart: null,
+      salesByCategoryChart: null,
       chartOption: {
         maintainAspectRatio: false,
         responsive: true,
@@ -112,13 +120,15 @@ export default {
   },
   components: {
     DatePicker,
-    BarChart
+    BarChart,
+    PieChart
   },
   mounted() {
     const { restaurantId } = this.$route.params;
     categoryService.getAll(restaurantId).then(categoryList => {
       this.categoryList = [{ name: 'All', id: '' }, ...categoryList];
     });
+    this.loadReport();
   },
   methods: {
     async loadReport() {
@@ -130,7 +140,25 @@ export default {
         .getDashboardData(startDate, endDate, this.category.id, restaurantId)
         .then(data => {
           console.log(data);
+          const salesByCategory = data.salesByCategory.map(salesByCategory => {
+            const categoryName = this.categoryList.find(
+              category => category.id === salesByCategory.categoryId
+            ).name;
+            return { ...salesByCategory, categoryName };
+          });
+          // console.log('salesByCategory', salesByCategory);
           this.statistic = data;
+          this.salesByCategoryChart = {
+            datasets: [
+              {
+                label: 'Quantity',
+                backgroundColor: salesByCategory.map(sale => randomColor()),
+                yAxisID: 'Quantity',
+                data: salesByCategory.map(sale => sale.quantity)
+              }
+            ],
+            labels: salesByCategory.map(sale => sale.categoryName)
+          };
           this.salesChart = {
             datasets: [
               {
@@ -157,7 +185,7 @@ export default {
 
 <style scoped>
 #app {
-  max-width: 720px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 
