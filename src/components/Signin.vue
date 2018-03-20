@@ -2,7 +2,7 @@
   <v-app v-if="authInited" light>
     <div class="box elevation-4">
       <v-form v-model="valid">
-        <v-text-field label="E-mail or Restaurant name" v-model="username" required></v-text-field>
+        <v-text-field label="E-mail or Restaurant ID" v-model="username" required></v-text-field>
         <v-text-field label="Password" :rules="passwordRules" v-model="password" :append-icon="passwordIcon ? 'visibility' : 'visibility_off'" :append-icon-cb="() => (passwordIcon = !passwordIcon)" :type="passwordIcon ? 'password' : 'text'" required></v-text-field>
         <div style="text-align: right;">
           <v-btn depressed :loading="signingIn" :disabled="!valid" color="primary" @click="signin" class="nosideMargin">
