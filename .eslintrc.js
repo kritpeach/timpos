@@ -24,8 +24,13 @@ module.exports = {
   },
   // add your custom rules here
   'rules': {
+<<<<<<< HEAD
     'linebreak-style':0,
     'no-console': 0,
+=======
+    'linebreak-style': 0,
+    // don't require .vue extension when importing
+>>>>>>> 427276824c8275ff34441e5eaeeaf41840c780f4
     'import/extensions': ['error', 'always', {
       'js': 'never',
       'vue': 'never'
