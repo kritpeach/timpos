@@ -1,7 +1,7 @@
 <template>
-  <v-dialog ref="dialog" persistent v-model="modal" lazy full-width width="290px" :return-value.sync="date">
-    <v-text-field slot="activator" :label="label" v-model="date" prepend-icon="event" readonly></v-text-field>
-    <v-date-picker v-model="date" scrollable>
+  <v-dialog ref="dialog" persistent v-model="modal" lazy full-width width="290px" :return-value.sync="dateData">
+    <v-text-field slot="activator" :label="label" v-model="dateData" prepend-icon="event" readonly></v-text-field>
+    <v-date-picker v-model="dateData" scrollable>
       <v-spacer></v-spacer>
       <v-btn flat color="primary" @click="modal = false">Cancel</v-btn>
       <v-btn flat color="primary" @click="onClickOk">OK</v-btn>
@@ -25,16 +25,17 @@ export default {
   },
   data() {
     return {
-      modal: false
+      modal: false,
+      dateData: this.date
     };
   },
   mounted() {
-    this.onSelectDate(this.date);
+    this.onSelectDate(this.dateData);
   },
   methods: {
     onClickOk() {
-      this.$refs.dialog.save(this.date);
-      this.onSelectDate(this.date);
+      this.$refs.dialog.save(this.dateData);
+      this.onSelectDate(this.dateData);
     }
   }
 };
