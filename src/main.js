@@ -12,10 +12,6 @@ import firebaseApp from "./connector/firebase";
 import App from './App';
 import router from './router';
 
-const httpLink = new HttpLink({
-  uri: 'http://localhost:5000/tumtim-50d1c/us-central1/api/graphql'
-});
-
 const authLink = setContext(async (_, { headers }) => {
   let token = null;
   try {
@@ -31,10 +27,12 @@ const authLink = setContext(async (_, { headers }) => {
   };
 });
 
+const httpLink = new HttpLink({
+  uri: 'http://localhost:5000/tumtim-50d1c/us-central1/api/graphql'
+});
 const apolloClient = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
-  connectToDevTools: true
+  cache: new InMemoryCache()
 });
 
 const apolloProvider = new VueApollo({
@@ -49,7 +47,7 @@ Vue.config.productionTip = false;
 new Vue({
   el: '#app',
   router,
-  apolloProvider,
+  provide: apolloProvider.provide(),
   components: { App },
   template: '<App/>'
 });

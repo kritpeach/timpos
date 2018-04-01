@@ -1,6 +1,7 @@
 <template>
   <v-app v-if="authInited" light>
     <div class="box elevation-4">
+      <h1>Manager Panel</h1>
       <v-form v-model="valid">
         <v-text-field label="E-mail or Restaurant ID" v-model="username" required></v-text-field>
         <v-text-field label="Password" :rules="passwordRules" v-model="password" :append-icon="passwordIcon ? 'visibility' : 'visibility_off'" :append-icon-cb="() => (passwordIcon = !passwordIcon)" :type="passwordIcon ? 'password' : 'text'" required></v-text-field>
@@ -43,9 +44,10 @@ export default {
         if (this.$route.query.to) {
           this.$router.replace(this.$route.query.to);
         } else if (payload.role === "manager") {
-          this.$router.replace(`/restaurantManagement/${payload.restaurantId}`);
+          this.$router.replace(`/restaurantManagement/${payload.restaurantId}/dashboard`);
         } else if (payload.role === "staff") {
-          this.$router.replace(`/restaurant/${payload.restaurantId}/bill`);
+          alert('You have no permission to access!')
+          // this.$router.replace(`/restaurant/${payload.restaurantId}/bill`);
         }
       }
     });

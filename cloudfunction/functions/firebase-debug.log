@@ -1,319 +1,88 @@
-[debug] [2018-01-12T05:58:31.100Z] ----------------------------------------------------------------------
-[debug] [2018-01-12T05:58:31.104Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\KritPeAcH\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve --only functions
-[debug] [2018-01-12T05:58:31.104Z] CLI Version:   3.16.0
-[debug] [2018-01-12T05:58:31.104Z] Platform:      win32
-[debug] [2018-01-12T05:58:31.104Z] Node Version:  v9.3.0
-[debug] [2018-01-12T05:58:31.104Z] Time:          Fri Jan 12 2018 12:58:31 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-12T05:58:31.104Z] ----------------------------------------------------------------------
+[debug] [2018-03-23T07:15:44.120Z] ----------------------------------------------------------------------
+[debug] [2018-03-23T07:15:44.123Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\KritPeAcH\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve --only functions
+[debug] [2018-03-23T07:15:44.123Z] CLI Version:   3.17.7
+[debug] [2018-03-23T07:15:44.123Z] Platform:      win32
+[debug] [2018-03-23T07:15:44.123Z] Node Version:  v9.8.0
+[debug] [2018-03-23T07:15:44.124Z] Time:          Fri Mar 23 2018 14:15:44 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-23T07:15:44.124Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-01-12T05:58:31.118Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-01-12T05:58:31.120Z] > authorizing via signed-in user
-[debug] [2018-01-12T05:58:31.122Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/tumtim-50d1c  
-  
- Fri Jan 12 2018 12:58:31 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-12T05:58:35.139Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-12T05:58:35.140Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/tumtim-50d1c/tokens  
-  
- Fri Jan 12 2018 12:58:35 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-12T05:58:40.714Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'E:\Project\tim\cloudfunction'...
-[info] 
-[info] i  functions: Preparing to emulate functions.
-[debug] [2018-01-12T05:58:41.758Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/tumtim-50d1c  
-  
- Fri Jan 12 2018 12:58:41 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-12T05:58:41.758Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/tumtim-50d1c/apiKeys  
-  
- Fri Jan 12 2018 12:58:41 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-12T05:58:43.770Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-12T05:58:44.064Z] <<< HTTP RESPONSE 200
-[info] +  functions: helloWorld: http://localhost:5000/tumtim-50d1c/us-central1/helloWorld
-[info] +  functions: api: http://localhost:5000/tumtim-50d1c/us-central1/api
-[debug] [2018-01-17T12:39:37.172Z] ----------------------------------------------------------------------
-[debug] [2018-01-17T12:39:37.174Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\KritPeAcH\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve --only functions
-[debug] [2018-01-17T12:39:37.174Z] CLI Version:   3.16.0
-[debug] [2018-01-17T12:39:37.174Z] Platform:      win32
-[debug] [2018-01-17T12:39:37.174Z] Node Version:  v9.3.0
-[debug] [2018-01-17T12:39:37.176Z] Time:          Wed Jan 17 2018 19:39:37 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-17T12:39:37.176Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2018-01-17T12:39:37.200Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-01-17T12:39:37.200Z] > authorizing via signed-in user
-[debug] [2018-01-17T12:39:37.202Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2018-01-17T12:39:37.204Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- { refresh_token: '1/2_CHWq9nxIHnoK_8QoEfYhCEJhObu9w4sZBXodFsCDo',
+[debug] [2018-03-23T07:15:44.141Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-03-23T07:15:44.142Z] > authorizing via signed-in user
+[debug] [2018-03-23T07:15:44.144Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-03-23T07:15:44.144Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/8Da1xWZ3R6YFsGQj9rBDWOSXzpA574xUIH7FElrJxZc',
   client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
   client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
   grant_type: 'refresh_token',
   scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Wed Jan 17 2018 19:39:37 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-17T12:39:37.504Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-17T12:39:37.518Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/tumtim-50d1c  
+ Fri Mar 23 2018 14:15:44 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-23T07:15:44.508Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-23T07:15:44.575Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/tumtim-50d1c  
   
- Wed Jan 17 2018 19:39:37 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-17T12:39:38.918Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-17T12:39:38.920Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/tumtim-50d1c/tokens  
+ Fri Mar 23 2018 14:15:44 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-23T07:15:45.883Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-23T07:15:45.886Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/tumtim-50d1c/tokens  
   
- Wed Jan 17 2018 19:39:38 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-17T12:39:40.363Z] <<< HTTP RESPONSE 200
+ Fri Mar 23 2018 14:15:45 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-23T07:15:47.000Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-23T07:15:47.004Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/tumtim-50d1c  
+  
+ Fri Mar 23 2018 14:15:47 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-23T07:15:48.356Z] <<< HTTP RESPONSE 200
 [info] 
-[info] === Serving from 'E:\Project\tim\cloudfunction'...
+[info] === Serving from 'E:\timpos\cloudfunction'...
 [info] 
 [info] i  functions: Preparing to emulate functions.
-[debug] [2018-01-17T12:39:42.228Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/tumtim-50d1c  
+[debug] [2018-03-23T07:15:59.335Z] Fetching environment
+[debug] [2018-03-23T07:15:59.371Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/174222737324:getServerAppConfig  
   
- Wed Jan 17 2018 19:39:42 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-17T12:39:42.229Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/tumtim-50d1c/apiKeys  
-  
- Wed Jan 17 2018 19:39:42 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-17T12:39:43.774Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-17T12:39:43.913Z] <<< HTTP RESPONSE 200
+ Fri Mar 23 2018 14:15:59 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-23T07:16:00.224Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-23T07:16:00.226Z] Starting @google-cloud/functions-emulator
+[debug] [2018-03-23T07:16:06.750Z] Parsing function triggers
 [info] +  functions: api: http://localhost:5000/tumtim-50d1c/us-central1/api
 [info] +  functions: helloWorld: http://localhost:5000/tumtim-50d1c/us-central1/helloWorld
-[debug] [2018-01-20T13:32:14.421Z] ----------------------------------------------------------------------
-[debug] [2018-01-20T13:32:14.424Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\KritPeAcH\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve --only functions
-[debug] [2018-01-20T13:32:14.424Z] CLI Version:   3.16.0
-[debug] [2018-01-20T13:32:14.425Z] Platform:      win32
-[debug] [2018-01-20T13:32:14.425Z] Node Version:  v9.3.0
-[debug] [2018-01-20T13:32:14.425Z] Time:          Sat Jan 20 2018 20:32:14 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-20T13:32:14.425Z] ----------------------------------------------------------------------
+[debug] [2018-04-01T15:06:47.745Z] ----------------------------------------------------------------------
+[debug] [2018-04-01T15:06:47.749Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\KritPeAcH\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve --only functions
+[debug] [2018-04-01T15:06:47.750Z] CLI Version:   3.17.7
+[debug] [2018-04-01T15:06:47.750Z] Platform:      win32
+[debug] [2018-04-01T15:06:47.750Z] Node Version:  v9.8.0
+[debug] [2018-04-01T15:06:47.750Z] Time:          Sun Apr 01 2018 22:06:47 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-04-01T15:06:47.750Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-01-20T13:32:14.455Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-01-20T13:32:14.456Z] > authorizing via signed-in user
-[debug] [2018-01-20T13:32:14.459Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2018-01-20T13:32:14.459Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- { refresh_token: '1/2_CHWq9nxIHnoK_8QoEfYhCEJhObu9w4sZBXodFsCDo',
+[debug] [2018-04-01T15:06:47.820Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-01T15:06:47.821Z] > authorizing via signed-in user
+[debug] [2018-04-01T15:06:47.824Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-04-01T15:06:47.825Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/8Da1xWZ3R6YFsGQj9rBDWOSXzpA574xUIH7FElrJxZc',
   client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
   client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
   grant_type: 'refresh_token',
   scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Sat Jan 20 2018 20:32:14 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-20T13:32:15.480Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-20T13:32:15.486Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/tumtim-50d1c  
+ Sun Apr 01 2018 22:06:47 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-04-01T15:06:48.201Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-01T15:06:48.398Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/tumtim-50d1c  
   
- Sat Jan 20 2018 20:32:15 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-20T13:32:17.086Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-20T13:32:17.087Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/tumtim-50d1c/tokens  
+ Sun Apr 01 2018 22:06:48 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-04-01T15:06:49.700Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-01T15:06:49.701Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/tumtim-50d1c/tokens  
   
- Sat Jan 20 2018 20:32:17 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-20T13:32:18.966Z] <<< HTTP RESPONSE 200
+ Sun Apr 01 2018 22:06:49 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-04-01T15:06:50.575Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-01T15:06:50.576Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/tumtim-50d1c  
+  
+ Sun Apr 01 2018 22:06:50 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-04-01T15:06:51.943Z] <<< HTTP RESPONSE 200
 [info] 
-[info] === Serving from 'E:\Project\tim\cloudfunction'...
-[info] 
-[info] i  functions: Preparing to emulate functions.
-[debug] [2018-01-20T13:32:20.765Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/tumtim-50d1c  
-  
- Sat Jan 20 2018 20:32:20 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-20T13:32:20.768Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/tumtim-50d1c/apiKeys  
-  
- Sat Jan 20 2018 20:32:20 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-20T13:32:22.958Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-20T13:32:22.978Z] <<< HTTP RESPONSE 200
-[info] +  functions: api: http://localhost:5000/tumtim-50d1c/us-central1/api
-[info] +  functions: helloWorld: http://localhost:5000/tumtim-50d1c/us-central1/helloWorld
-[debug] [2018-01-21T14:50:10.470Z] ----------------------------------------------------------------------
-[debug] [2018-01-21T14:50:10.474Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\KritPeAcH\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve --only functions
-[debug] [2018-01-21T14:50:10.474Z] CLI Version:   3.16.0
-[debug] [2018-01-21T14:50:10.474Z] Platform:      win32
-[debug] [2018-01-21T14:50:10.474Z] Node Version:  v9.3.0
-[debug] [2018-01-21T14:50:10.475Z] Time:          Sun Jan 21 2018 21:50:10 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-21T14:50:10.475Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2018-01-21T14:50:10.507Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-01-21T14:50:10.508Z] > authorizing via signed-in user
-[debug] [2018-01-21T14:50:10.512Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2018-01-21T14:50:10.513Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- { refresh_token: '1/2_CHWq9nxIHnoK_8QoEfYhCEJhObu9w4sZBXodFsCDo',
-  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
-  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
-  grant_type: 'refresh_token',
-  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Sun Jan 21 2018 21:50:10 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-21T14:50:11.349Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-21T14:50:11.357Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/tumtim-50d1c  
-  
- Sun Jan 21 2018 21:50:11 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-21T14:50:12.829Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-21T14:50:12.830Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/tumtim-50d1c/tokens  
-  
- Sun Jan 21 2018 21:50:12 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-21T14:50:14.121Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'E:\Project\tim\cloudfunction'...
+[info] === Serving from 'E:\timpos\cloudfunction'...
 [info] 
 [info] i  functions: Preparing to emulate functions.
-[debug] [2018-01-21T14:50:16.062Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/tumtim-50d1c  
+[debug] [2018-04-01T15:07:03.979Z] Fetching environment
+[debug] [2018-04-01T15:07:03.982Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/174222737324:getServerAppConfig  
   
- Sun Jan 21 2018 21:50:16 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-21T14:50:16.063Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/tumtim-50d1c/apiKeys  
-  
- Sun Jan 21 2018 21:50:16 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-21T14:50:17.674Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-21T14:50:17.817Z] <<< HTTP RESPONSE 200
+ Sun Apr 01 2018 22:07:03 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-04-01T15:07:04.800Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-01T15:07:04.801Z] Starting @google-cloud/functions-emulator
+[debug] [2018-04-01T15:07:13.038Z] Parsing function triggers
 [info] +  functions: api: http://localhost:5000/tumtim-50d1c/us-central1/api
 [info] +  functions: helloWorld: http://localhost:5000/tumtim-50d1c/us-central1/helloWorld
-[debug] [2018-01-23T11:18:26.709Z] ----------------------------------------------------------------------
-[debug] [2018-01-23T11:18:26.712Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\KritPeAcH\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve --only functions
-[debug] [2018-01-23T11:18:26.712Z] CLI Version:   3.16.0
-[debug] [2018-01-23T11:18:26.712Z] Platform:      win32
-[debug] [2018-01-23T11:18:26.712Z] Node Version:  v9.3.0
-[debug] [2018-01-23T11:18:26.713Z] Time:          Tue Jan 23 2018 18:18:26 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-23T11:18:26.713Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2018-01-23T11:18:26.737Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-01-23T11:18:26.737Z] > authorizing via signed-in user
-[debug] [2018-01-23T11:18:26.740Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2018-01-23T11:18:26.740Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- { refresh_token: '1/2_CHWq9nxIHnoK_8QoEfYhCEJhObu9w4sZBXodFsCDo',
-  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
-  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
-  grant_type: 'refresh_token',
-  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Tue Jan 23 2018 18:18:26 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-23T11:18:27.067Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-23T11:18:27.086Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/tumtim-50d1c  
-  
- Tue Jan 23 2018 18:18:27 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-23T11:18:28.395Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-23T11:18:28.397Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/tumtim-50d1c/tokens  
-  
- Tue Jan 23 2018 18:18:28 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-23T11:18:29.449Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'E:\Project\tim\cloudfunction'...
-[info] 
-[info] i  functions: Preparing to emulate functions.
-[debug] [2018-01-23T11:18:31.118Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/tumtim-50d1c  
-  
- Tue Jan 23 2018 18:18:31 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-23T11:18:31.119Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/tumtim-50d1c/apiKeys  
-  
- Tue Jan 23 2018 18:18:31 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-23T11:18:32.634Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-23T11:18:32.680Z] <<< HTTP RESPONSE 200
-[info] +  functions: helloWorld: http://localhost:5000/tumtim-50d1c/us-central1/helloWorld
-[info] +  functions: api: http://localhost:5000/tumtim-50d1c/us-central1/api
-[debug] [2018-01-23T17:33:09.674Z] ----------------------------------------------------------------------
-[debug] [2018-01-23T17:33:09.676Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\KritPeAcH\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve --only functions
-[debug] [2018-01-23T17:33:09.678Z] CLI Version:   3.16.0
-[debug] [2018-01-23T17:33:09.678Z] Platform:      win32
-[debug] [2018-01-23T17:33:09.678Z] Node Version:  v9.3.0
-[debug] [2018-01-23T17:33:09.678Z] Time:          Wed Jan 24 2018 00:33:09 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-23T17:33:09.678Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2018-01-23T17:33:09.699Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-01-23T17:33:09.699Z] > authorizing via signed-in user
-[debug] [2018-01-23T17:33:09.701Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2018-01-23T17:33:09.701Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- { refresh_token: '1/2_CHWq9nxIHnoK_8QoEfYhCEJhObu9w4sZBXodFsCDo',
-  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
-  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
-  grant_type: 'refresh_token',
-  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Wed Jan 24 2018 00:33:09 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-23T17:33:10.222Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-23T17:33:10.232Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/tumtim-50d1c  
-  
- Wed Jan 24 2018 00:33:10 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-23T17:33:11.575Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-23T17:33:11.575Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/tumtim-50d1c/tokens  
-  
- Wed Jan 24 2018 00:33:11 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-23T17:33:14.130Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'E:\Project\tim\cloudfunction'...
-[info] 
-[info] i  functions: Preparing to emulate functions.
-[debug] [2018-01-23T17:33:15.428Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/tumtim-50d1c  
-  
- Wed Jan 24 2018 00:33:15 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-23T17:33:15.428Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/tumtim-50d1c/apiKeys  
-  
- Wed Jan 24 2018 00:33:15 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-01-23T17:33:18.576Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-23T17:33:18.579Z] <<< HTTP RESPONSE 200
-[info] +  functions: api: http://localhost:5000/tumtim-50d1c/us-central1/api
-[info] +  functions: helloWorld: http://localhost:5000/tumtim-50d1c/us-central1/helloWorld
-[debug] [2018-02-19T19:55:27.226Z] ----------------------------------------------------------------------
-[debug] [2018-02-19T19:55:27.229Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\KritPeAcH\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve --only functions
-[debug] [2018-02-19T19:55:27.229Z] CLI Version:   3.16.0
-[debug] [2018-02-19T19:55:27.229Z] Platform:      win32
-[debug] [2018-02-19T19:55:27.229Z] Node Version:  v9.3.0
-[debug] [2018-02-19T19:55:27.230Z] Time:          Tue Feb 20 2018 02:55:27 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-02-19T19:55:27.230Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2018-02-19T19:55:27.259Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-02-19T19:55:27.260Z] > authorizing via signed-in user
-[debug] [2018-02-19T19:55:27.263Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2018-02-19T19:55:27.263Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- { refresh_token: '1/2_CHWq9nxIHnoK_8QoEfYhCEJhObu9w4sZBXodFsCDo',
-  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
-  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
-  grant_type: 'refresh_token',
-  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Tue Feb 20 2018 02:55:27 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-02-19T19:55:27.594Z] <<< HTTP RESPONSE 200
-[debug] [2018-02-19T19:55:27.599Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/tumtim-50d1c  
-  
- Tue Feb 20 2018 02:55:27 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-02-19T19:55:28.795Z] <<< HTTP RESPONSE 200
-[debug] [2018-02-19T19:55:28.797Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/tumtim-50d1c/tokens  
-  
- Tue Feb 20 2018 02:55:28 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-02-19T19:55:30.034Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'E:\Project\tim\cloudfunction'...
-[info] 
-[info] i  functions: Preparing to emulate functions.
-[debug] [2018-02-19T19:55:31.852Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/tumtim-50d1c  
-  
- Tue Feb 20 2018 02:55:31 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-02-19T19:55:31.852Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/tumtim-50d1c/apiKeys  
-  
- Tue Feb 20 2018 02:55:31 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-02-19T19:55:33.409Z] <<< HTTP RESPONSE 200
-[debug] [2018-02-19T19:55:33.664Z] <<< HTTP RESPONSE 200
-[info] +  functions: helloWorld: http://localhost:5000/tumtim-50d1c/us-central1/helloWorld
-[info] +  functions: api: http://localhost:5000/tumtim-50d1c/us-central1/api
-[debug] [2018-03-11T04:17:12.289Z] ----------------------------------------------------------------------
-[debug] [2018-03-11T04:17:12.291Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\KritPeAcH\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve --only functions
-[debug] [2018-03-11T04:17:12.291Z] CLI Version:   3.16.0
-[debug] [2018-03-11T04:17:12.291Z] Platform:      win32
-[debug] [2018-03-11T04:17:12.291Z] Node Version:  v9.3.0
-[debug] [2018-03-11T04:17:12.293Z] Time:          Sun Mar 11 2018 11:17:12 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-03-11T04:17:12.293Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2018-03-11T04:17:12.313Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-03-11T04:17:12.313Z] > authorizing via signed-in user
-[debug] [2018-03-11T04:17:12.315Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2018-03-11T04:17:12.315Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- { refresh_token: '1/2_CHWq9nxIHnoK_8QoEfYhCEJhObu9w4sZBXodFsCDo',
-  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
-  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
-  grant_type: 'refresh_token',
-  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Sun Mar 11 2018 11:17:12 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-03-11T04:17:15.674Z] <<< HTTP RESPONSE 200
-[debug] [2018-03-11T04:17:15.693Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/tumtim-50d1c  
-  
- Sun Mar 11 2018 11:17:15 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-03-11T04:17:16.920Z] <<< HTTP RESPONSE 200
-[debug] [2018-03-11T04:17:16.922Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/tumtim-50d1c/tokens  
-  
- Sun Mar 11 2018 11:17:16 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-03-11T04:17:18.077Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'E:\Project\tim\cloudfunction'...
-[info] 
-[info] i  functions: Preparing to emulate functions.
-[debug] [2018-03-11T04:17:19.743Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/tumtim-50d1c  
-  
- Sun Mar 11 2018 11:17:19 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-03-11T04:17:19.743Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/tumtim-50d1c/apiKeys  
-  
- Sun Mar 11 2018 11:17:19 GMT+0700 (SE Asia Standard Time)
-[debug] [2018-03-11T04:17:21.225Z] <<< HTTP RESPONSE 200
-[debug] [2018-03-11T04:17:21.339Z] <<< HTTP RESPONSE 200
-[info] +  functions: helloWorld: http://localhost:5000/tumtim-50d1c/us-central1/helloWorld
-[info] +  functions: api: http://localhost:5000/tumtim-50d1c/us-central1/api
