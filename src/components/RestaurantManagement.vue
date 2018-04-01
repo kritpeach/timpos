@@ -3,12 +3,9 @@
         <v-toolbar dark color="primary">
             <v-toolbar-title class="white--text" v-if="user">Hello {{user.email}}</v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn @click="signout">
-                Sign out
-            </v-btn>
-            <v-btn icon>
-                <v-icon>more_vert</v-icon>
-            </v-btn>
+            <v-toolbar-items class="hidden-sm-and-down">
+      <v-btn @click="signout" flat>Sign out</v-btn>
+    </v-toolbar-items>
         </v-toolbar>
         <v-layout row justify-center>
             <router-link v-for="item in restaurantList" :key="item.id" :to="{ name: 'Dashboard', params: {restaurantId: item.id}}">

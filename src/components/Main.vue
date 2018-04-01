@@ -18,6 +18,9 @@
       <v-toolbar-side-icon class="white--text" @click.stop='drawer = !drawer' light></v-toolbar-side-icon>
       <v-toolbar-title v-text='title'></v-toolbar-title>
       <v-spacer></v-spacer>
+      <v-toolbar-items class="hidden-sm-and-down">
+      <v-btn @click="signout" flat>Sign out</v-btn>
+    </v-toolbar-items>
     </v-toolbar>
     <v-content>
       <router-view></router-view>
@@ -26,7 +29,7 @@
 </template>
 
 <script>
-// to="{ name: item.routeName, params: {restaurantId: $route.params.restaurantId}}
+import firebaseApp from "../connector/firebase";
 export default {
   data() {
     return {
@@ -52,15 +55,20 @@ export default {
           icon: "group_work",
           title: "Category",
           routeName: "CategoryManagement"
-        },
-        {
-          icon: "settings",
-          title: "Setting",
-          routeName: "Setting"
         }
       ],
       title: "Restaurant management"
     };
+  },
+  methods: {
+    async signout() {
+      try {
+        await firebaseApp.auth().signOut();
+        this.$router.push("/signin");
+      } catch (e) {
+        console.log(e);
+      }
+    }
   }
 };
 /*
