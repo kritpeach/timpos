@@ -20,7 +20,7 @@
             <v-card color="blue-grey darken-2" class="white--text">
               <v-card-title primary-title>
                 <div class="headline">฿ {{statistic.income}}</div>
-                <div>Income</div>
+                <div>Revenue</div>
               </v-card-title>
             </v-card>
           </v-flex>
@@ -55,7 +55,7 @@
           </v-flex>
           <v-flex xs4>
             <v-card>
-              <pie-chart :height="350" :chart-data="salesByCategoryChart" :options="{ maintainAspectRatio: false, responsive: true, title: { display: true, text: 'Sales by category'} }"></pie-chart>
+              <pie-chart :height="350" :chart-data="salesByCategoryChart" :options="{ maintainAspectRatio: false, responsive: true, title: { display: true, text: 'Net revenue by category'} }"></pie-chart>
             </v-card>
           </v-flex>
         </template>
@@ -87,7 +87,7 @@ export default {
         responsive: true,
         title: {
           display: true,
-          text: 'Sales by menu'
+          text: 'Top 10 Sales'
         },
         scales: {
           yAxes: [
@@ -103,7 +103,7 @@ export default {
               }
             },
             {
-              id: 'Income',
+              id: 'Revenue',
               gridLines: {
                 display: false
               },
@@ -153,30 +153,31 @@ export default {
           this.salesByCategoryChart = {
             datasets: [
               {
-                label: 'Quantity',
+                label: 'Revenue',
                 backgroundColor: salesByCategory.map(sale => randomColor()),
-                yAxisID: 'Quantity',
-                data: salesByCategory.map(sale => sale.quantity)
+                yAxisID: 'Revenue',
+                data: salesByCategory.map(sale => sale.income)
               }
             ],
             labels: salesByCategory.map(sale => sale.categoryName)
           };
+          const topTenSales = data.sales.slice(0,10);
           this.salesChart = {
             datasets: [
               {
                 label: 'Quantity',
                 backgroundColor: '#f87979',
                 yAxisID: 'Quantity',
-                data: data.sales.map(sale => sale.quantity)
+                data: topTenSales.map(sale => sale.quantity)
               },
               {
-                label: 'Income (Baht)',
+                label: 'Revenue (Baht)',
                 backgroundColor: '#f81979',
-                yAxisID: 'Income',
-                data: data.sales.map(sale => sale.income)
+                yAxisID: 'Revenue',
+                data: topTenSales.map(sale => sale.income)
               }
             ],
-            labels: data.sales.map(sale => sale.menuName)
+            labels: topTenSales.map(sale => sale.menuName)
           };
         });
       this.loading = false;
