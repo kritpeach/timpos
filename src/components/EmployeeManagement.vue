@@ -90,7 +90,7 @@ export default {
       },
       headers: [
         { text: "Name", value: "name", align: "left" },
-        { text: "Role", value: "role" }
+        { text: "Role", value: "role", align: "right" }
       ],
       employeeList: null,
       creatingEmployee: false,

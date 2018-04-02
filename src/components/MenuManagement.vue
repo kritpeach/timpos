@@ -101,8 +101,8 @@ export default {
       },
       headers: [
         { text: 'Name', value: 'name', align: 'left' },
-        { text: 'Price', value: 'price' },
-        { text: 'Category', value: 'category' }
+        { text: 'Price', value: 'price', align: "right" },
+        { text: 'Category', value: 'category', align: "right" }
       ],
       categoryList: null,
       menuList: null,
@@ -148,7 +148,7 @@ export default {
           const categoriesText = categories.join(', ');
           return { ...menu, categories: categoriesText, prices: pricesText };
         }
-        return { ...menu, categories: 'Loading...' };
+        return { ...menu, categories: 'Loading...', prices: 'Loading...' };
       });
     },
     menuOptionListUI() {
