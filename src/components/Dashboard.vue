@@ -4,10 +4,10 @@
     <v-container grid-list-md>
       <v-layout row wrap>
         <v-flex xs3>
-          <DatePicker label="Select start date" :date="new Date(Date.now() - 864e5).toISOString().split('T')[0]" :onSelectDate="(date) => startDate = date"></DatePicker>
+          <DatePicker label="Select start date" :date="new Date()" :onSelectDate="(date) => startDate = date"></DatePicker>
         </v-flex>
         <v-flex xs3>
-          <DatePicker label="Select end date" :date="new Date().toISOString().split('T')[0]" :onSelectDate="(date) => endDate = date"></DatePicker>
+          <DatePicker label="Select end date" :date="new Date(Date.now() + 864e5)" :onSelectDate="(date) => endDate = date"></DatePicker>
         </v-flex>
         <v-flex xs3>
           <v-select prepend-icon="group_work" :items="categoryList" v-model="category" label="Select category" item-text="name" item-value="id" return-object single-line></v-select>
@@ -134,8 +134,10 @@ export default {
     async loadReport() {
       this.loading = true;
       const { restaurantId } = this.$route.params;
-      const startDate = new Date(this.startDate);
-      const endDate = new Date(this.endDate);
+      const startDate = this.startDate;
+      startDate.setHours(0,0,0,0);
+      const endDate = this.endDate;
+      endDate.setHours(0,0,0,0);
       await statistic
         .getDashboardData(startDate, endDate, this.category.id, restaurantId)
         .then(data => {
