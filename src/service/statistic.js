@@ -24,6 +24,8 @@ const getDashboardData = async (
   categoryId,
   restaurantId
 ) => {
+  console.log('startDate', startDate);
+  console.log('endDate', endDate);
   const restaurantRef = firebaseApp
     .firestore()
     .collection("restaurant")
@@ -42,8 +44,9 @@ const getDashboardData = async (
       .filter(order => order.doneAt instanceof Date)
       .map(order => order.order));
     if (categoryId) {
+      // console.log('categoryId', categoryId);
       return allOrderLineItemList
-        .filter(orderLineItem => orderLineItem.menu.categories[categoryId]);
+        .filter(orderLineItem => typeof orderLineItem.menu.categories[categoryId] !== 'undefined');
     }
     return allOrderLineItemList;
   };

@@ -10,8 +10,17 @@
 </template>
 
 <script>
+const yyyymmdd = date => {
+  var mm = date.getMonth() + 1; // getMonth() is zero-based
+  var dd = date.getDate();
+  return [
+    date.getFullYear(),
+    (mm > 9 ? "" : "0") + mm,
+    (dd > 9 ? "" : "0") + dd
+  ].join("-");
+};
 export default {
-  name: 'datePicker',
+  name: "datePicker",
   props: {
     label: {
       type: String
@@ -20,22 +29,26 @@ export default {
       type: Function
     },
     date: {
-      type: String
+      type: Date
     }
   },
   data() {
     return {
       modal: false,
-      dateData: this.date
+      dateData: yyyymmdd(this.date)
     };
   },
   mounted() {
-    this.onSelectDate(this.dateData);
+    const date = new Date(this.dateData);
+    date.setHours(0, 0, 0, 0);
+    this.onSelectDate(date);
   },
   methods: {
     onClickOk() {
       this.$refs.dialog.save(this.dateData);
-      this.onSelectDate(this.dateData);
+      const date = new Date(this.dateData);
+      date.setHours(0, 0, 0, 0);
+      this.onSelectDate(date);
     }
   }
 };

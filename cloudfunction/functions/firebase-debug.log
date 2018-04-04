@@ -86,3 +86,47 @@
 [debug] [2018-04-01T15:07:13.038Z] Parsing function triggers
 [info] +  functions: api: http://localhost:5000/tumtim-50d1c/us-central1/api
 [info] +  functions: helloWorld: http://localhost:5000/tumtim-50d1c/us-central1/helloWorld
+[debug] [2018-04-01T18:04:37.236Z] ----------------------------------------------------------------------
+[debug] [2018-04-01T18:04:37.239Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\KritPeAcH\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve --only functions
+[debug] [2018-04-01T18:04:37.240Z] CLI Version:   3.17.7
+[debug] [2018-04-01T18:04:37.240Z] Platform:      win32
+[debug] [2018-04-01T18:04:37.240Z] Node Version:  v9.8.0
+[debug] [2018-04-01T18:04:37.240Z] Time:          Mon Apr 02 2018 01:04:37 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-04-01T18:04:37.240Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-01T18:04:37.394Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-01T18:04:37.395Z] > authorizing via signed-in user
+[debug] [2018-04-01T18:04:37.397Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-04-01T18:04:37.397Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/8Da1xWZ3R6YFsGQj9rBDWOSXzpA574xUIH7FElrJxZc',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Apr 02 2018 01:04:37 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-04-01T18:04:39.124Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-01T18:04:39.221Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/tumtim-50d1c  
+  
+ Mon Apr 02 2018 01:04:39 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-04-01T18:04:40.542Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-01T18:04:40.543Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/tumtim-50d1c/tokens  
+  
+ Mon Apr 02 2018 01:04:40 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-04-01T18:04:41.949Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-01T18:04:41.950Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/tumtim-50d1c  
+  
+ Mon Apr 02 2018 01:04:41 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-04-01T18:04:43.329Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'E:\timpos\cloudfunction'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-04-01T18:05:06.070Z] Fetching environment
+[debug] [2018-04-01T18:05:06.096Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/174222737324:getServerAppConfig  
+  
+ Mon Apr 02 2018 01:05:06 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-04-01T18:05:08.158Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-01T18:05:08.158Z] Starting @google-cloud/functions-emulator
+[debug] [2018-04-01T18:05:29.761Z] Parsing function triggers
+[info] +  functions: helloWorld: http://localhost:5000/tumtim-50d1c/us-central1/helloWorld
+[info] +  functions: api: http://localhost:5000/tumtim-50d1c/us-central1/api
