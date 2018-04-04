@@ -12,7 +12,7 @@ Create Date: 2018/3/11
 Revised By: Patikorn Ruang-In
 Revised Date: 2018/4/4
 */
-const create = async (obj_category) => {
+const obj_Create_Category = async (obj_category) => {
   const { id, ...obj_noIdCategory } = obj_category;
   const obj_timed_category = {
     ...obj_noIdCategory,
@@ -34,7 +34,7 @@ Create Date: 2018/3/11
 Revised By: Patikorn Ruang-In
 Revised Date: 2018/4/4
 */
-const update = async (obj_category) => {
+const obj_Update_Category = async (obj_category) => {
   const { id, ...obj_noIdCategory } = obj_category;
   return firebaseApp
     .firestore()
@@ -53,7 +53,7 @@ Create Date: 2018/3/11
 Revised By: Patikorn Ruang-In
 Revised Date: 2018/4/4
 */
-const remove = async (str_categoryId) => firebaseApp
+const Remove_Category = async (str_categoryId) => firebaseApp
   .firestore()
   .collection("category")
   .doc(str_categoryId)
@@ -69,7 +69,7 @@ Create Date: 2018/3/11
 Revised By: Patikorn Ruang-In
 Revised Date: 2018/4/4
 */
-const onSnapshot = (str_restaurantId, callback) => {
+const OnSnapshot_Category = (str_restaurantId, callback) => {
   const obj_restaurant = firebaseApp.firestore().collection('restaurant').doc(str_restaurantId);
   firebaseApp
     .firestore()
@@ -95,7 +95,7 @@ Create Date: 2018/3/11
 Revised By: Patikorn Ruang-In
 Revised Date: 2018/4/4
 */
-const getAll = async (str_restaurantId) => {
+const GetAll_Category = async (str_restaurantId) => {
   const restaurant = firebaseApp.firestore().collection('restaurant').doc(str_restaurantId);
   const snap = await firebaseApp
     .firestore()
@@ -111,6 +111,6 @@ const getAll = async (str_restaurantId) => {
 };
 
 export default {
-  create, update, remove, onSnapshot, getAll
+  obj_Create_Category, obj_Update_Category, Remove_Category, OnSnapshot_Category, GetAll_Category
 };
 
