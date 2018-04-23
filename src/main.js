@@ -28,7 +28,7 @@ const authLink = setContext(async (_, { headers }) => {
 });
 
 const httpLink = new HttpLink({
-  uri: 'http://localhost:5000/tumtim-50d1c/us-central1/api/graphql'
+  uri: 'https://us-central1-tumtim-50d1c.cloudfunctions.net/api/graphql' // http://localhost:5000/tumtim-50d1c/us-central1/api/graphql
 });
 const apolloClient = new ApolloClient({
   link: authLink.concat(httpLink),
