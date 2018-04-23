@@ -18,7 +18,7 @@
       <v-toolbar-side-icon class="white--text" @click.stop='drawer = !drawer' light></v-toolbar-side-icon>
       <v-toolbar-title v-text='title'></v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-sm-and-down">
+      <v-toolbar-items>
       <v-btn @click="signout" flat>Sign out</v-btn>
     </v-toolbar-items>
     </v-toolbar>

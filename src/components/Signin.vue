@@ -47,6 +47,7 @@ export default {
           this.$router.replace(`/restaurantManagement/${payload.restaurantId}/dashboard`);
         } else if (payload.role === "staff") {
           alert('You have no permission to access!')
+          firebaseApp.auth().signOut();
           // this.$router.replace(`/restaurant/${payload.restaurantId}/bill`);
         }
       }
