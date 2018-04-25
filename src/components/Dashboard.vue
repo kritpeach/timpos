@@ -14,6 +14,7 @@
         </v-flex>
         <v-flex xs3>
           <v-btn @click="loadReport" :loading="loading" depressed color="primary">Submit</v-btn>
+          <v-btn @click="print" depressed color="primary">Print</v-btn>
         </v-flex>
         <template v-if="statistic !== null">
           <v-flex xs3>
@@ -131,13 +132,16 @@ export default {
     this.loadReport();
   },
   methods: {
+    print() {
+      window.print();
+    },
     async loadReport() {
       this.loading = true;
       const { restaurantId } = this.$route.params;
       const startDate = this.startDate;
-      startDate.setHours(0,0,0,0);
+      startDate.setHours(0, 0, 0, 0);
       const endDate = this.endDate;
-      endDate.setHours(0,0,0,0);
+      endDate.setHours(0, 0, 0, 0);
       await statistic
         .getDashboardData(startDate, endDate, this.category.id, restaurantId)
         .then(data => {
@@ -161,7 +165,7 @@ export default {
             ],
             labels: salesByCategory.map(sale => sale.categoryName)
           };
-          const topTenSales = data.sales.slice(0,10);
+          const topTenSales = data.sales.slice(0, 10);
           this.salesChart = {
             datasets: [
               {
