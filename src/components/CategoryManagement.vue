@@ -21,7 +21,7 @@
                 <v-card-text>
                     <v-container grid-list-md>
                         <v-layout wrap>
-                            <v-flex>                              
+                            <v-flex>
                                 <v-text-field v-model="managementDialog.form.name" :rules="[v => !!v || 'Required']" label="Name" required></v-text-field>
                             </v-flex>
                         </v-layout>
@@ -29,7 +29,7 @@
                 </v-card-text>
                 <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn color="primary" flat @click="managementDialog.show = false">Close</v-btn>          
+                    <v-btn color="primary" flat @click="managementDialog.show = false">Close</v-btn>
                     <v-btn v-if="managementDialog.mode === 'CREATE'" color="primary" :loading="creating" :disabled="!managementDialog.valid" @click="create">Create</v-btn>
                     <template v-if="managementDialog.mode === 'EDIT'">
                       <v-btn color="error" :loading="deleting" @click="remove">Delete</v-btn>
@@ -135,5 +135,12 @@ export default {
 #app {
   max-width: 720px;
   margin: 0 auto;
+}
+
+#tested{
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  color: aqua;
 }
 </style>
