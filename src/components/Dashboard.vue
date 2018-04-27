@@ -199,4 +199,11 @@ export default {
 .headline {
   width: 100%;
 }
+
+#tested{
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  color: aqua;
+}
 </style>
