@@ -10,4 +10,5 @@ const config = {
   messagingSenderId: "174222737324"
 };
 const firebaseApp = firebase.initializeApp(config);
+firebase.firestore().settings({ timestampsInSnapshots: true });
 export default firebaseApp;
