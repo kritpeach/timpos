@@ -1,3 +1,3 @@
 # TumTim POS
 
-> Tim Restaurant POS (Management)
+> TumTim Restaurant POS (Management)
