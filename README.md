@@ -1,6 +1,8 @@
 # TumTim POS for manager
-Restaurant POS
-Demo: https://kritpeach.github.io
+Restaurant POS - Progressive Web Application
+
+### Demo
+https://kritpeach.github.io
 
 ## Getting Started
 ### Prerequisites
