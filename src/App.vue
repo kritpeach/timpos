@@ -15,21 +15,6 @@ export default {
     return {
       clipped: true,
       drawer: true,
-      items: [
-        {
-          icon: "bubble_chart",
-          title: "Dashboard"
-        },
-        {
-          icon: "bubble_chart",
-          title: "Employee"
-        },
-        {
-          icon: "bubble_chart",
-          title: "Menu"
-        }
-      ],
-      title: "Vuetify.js"
     };
   }
 };
