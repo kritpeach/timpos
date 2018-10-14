@@ -71,11 +71,4 @@ export default {
     }
   }
 };
-/*
-        {
-          icon: "list",
-          title: "Menu option",
-          routeName: "MenuOptionManagement"
-        },
-        */
 </script>
