@@ -3,7 +3,7 @@
     <div class="box elevation-4">
       <h1>Manager Panel</h1>
       <v-form v-model="valid">
-        <v-text-field label="E-mail or Restaurant ID" v-model="username" required></v-text-field>
+        <v-text-field label="E-mail or Restaurant ID" :rules="restaurantIdRules" v-model="username" required></v-text-field>
         <v-text-field label="Password" :rules="passwordRules" v-model="password" :append-icon="passwordIcon ? 'visibility' : 'visibility_off'" :append-icon-cb="() => (passwordIcon = !passwordIcon)" :type="passwordIcon ? 'password' : 'text'" required></v-text-field>
         <div style="text-align: right;">
           <v-btn depressed :loading="signingIn" :disabled="!valid" color="primary" @click="signin" class="nosideMargin">
@@ -62,11 +62,8 @@ export default {
     signingIn: false,
     signinError: null,
     customToken: "",
-    emailRules: [
-      v => !!v || "E-mail is required",
-      v =>
-        /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
-        "E-mail must be valid"
+    restaurantIdRules: [
+      v => !!v || "E-mail is required"
     ],
     passwordRules: [
       v => !!v || "Password is required",
