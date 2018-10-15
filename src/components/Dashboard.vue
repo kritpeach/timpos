@@ -12,9 +12,10 @@
         <v-flex xs3>
           <v-select prepend-icon="group_work" :items="categoryList" v-model="category" label="Select category" item-text="name" item-value="id" return-object single-line></v-select>
         </v-flex>
-        <v-flex zz>
+        <v-flex xs12>
           <v-btn @click="loadReport" :loading="loading" depressed color="primary">Submit</v-btn>
           <v-btn @click="print" depressed color="primary">Print</v-btn>
+          <v-btn @click="pdf" depressed color="primary">PDF</v-btn>
         </v-flex>
         <template v-if="statistic !== null">
           <v-flex xs3>
@@ -66,18 +67,21 @@
 </template>
 
 <script>
-import statistic from '../service/statistic';
-import categoryService from '../service/Category';
-import DatePicker from './DatePicker';
-import BarChart from './BarChart';
-import PieChart from './PieChart';
-import randomColor from '../util/ramdomColor';
+import statistic from "../service/statistic";
+import categoryService from "../service/Category";
+import DatePicker from "./DatePicker";
+import BarChart from "./BarChart";
+import PieChart from "./PieChart";
+import randomColor from "../util/ramdomColor";
+import pdfReport from "../util/pdfReport";
+import menuService from "../service/menu";
+
 export default {
   data() {
     return {
       startDate: null,
       endDate: null,
-      category: { name: 'All', id: '' },
+      category: { name: "All", id: "" },
       categoryList: [],
       loading: false,
       statistic: null,
@@ -88,28 +92,28 @@ export default {
         responsive: true,
         title: {
           display: true,
-          text: 'Top 10 Sales'
+          text: "Top 10 Sales"
         },
         scales: {
           yAxes: [
             {
-              id: 'Quantity',
+              id: "Quantity",
               gridLines: {
                 display: false
               },
-              type: 'linear',
-              position: 'left',
+              type: "linear",
+              position: "left",
               ticks: {
                 beginAtZero: true
               }
             },
             {
-              id: 'Revenue',
+              id: "Revenue",
               gridLines: {
                 display: false
               },
-              type: 'linear',
-              position: 'right',
+              type: "linear",
+              position: "right",
               ticks: {
                 beginAtZero: true
               }
@@ -127,13 +131,34 @@ export default {
   mounted() {
     const { restaurantId } = this.$route.params;
     categoryService.getAll(restaurantId).then(categoryList => {
-      this.categoryList = [{ name: 'All', id: '' }, ...categoryList];
+      this.categoryList = [{ name: "All", id: "" }, ...categoryList];
     });
     this.loadReport();
   },
   methods: {
     print() {
       window.print();
+    },
+    async pdf() {
+      const saleTableData = this.statistic.sales.map(sale => [
+        sale.menuName,
+        sale.quantity,
+        sale.income
+      ]);
+      const saleMenuNameList = this.statistic.sales.map(sale => sale.menuName);
+      const { restaurantId } = this.$route.params;
+      const menuList = await menuService.getAll(restaurantId);
+      const noSaleTableData = menuList.reduce((state, menu) => {
+        if (saleMenuNameList.includes(menu.name)) return state;
+        return [...state, [menu.name, 0, 0]];
+      });
+      pdfReport(
+        [...saleTableData, ...noSaleTableData],
+        this.startDate,
+        this.endDate,
+        this.statistic.income,
+        menuList
+      );
     },
     async loadReport() {
       this.loading = true;
@@ -157,9 +182,9 @@ export default {
           this.salesByCategoryChart = {
             datasets: [
               {
-                label: 'Revenue',
+                label: "Revenue",
                 backgroundColor: salesByCategory.map(sale => randomColor()),
-                yAxisID: 'Revenue',
+                yAxisID: "Revenue",
                 data: salesByCategory.map(sale => sale.income)
               }
             ],
@@ -169,15 +194,15 @@ export default {
           this.salesChart = {
             datasets: [
               {
-                label: 'Quantity',
-                backgroundColor: '#f87979',
-                yAxisID: 'Quantity',
+                label: "Quantity",
+                backgroundColor: "#f87979",
+                yAxisID: "Quantity",
                 data: topTenSales.map(sale => sale.quantity)
               },
               {
-                label: 'Revenue (Baht)',
-                backgroundColor: '#f81979',
-                yAxisID: 'Revenue',
+                label: "Revenue (Baht)",
+                backgroundColor: "#f81979",
+                yAxisID: "Revenue",
                 data: topTenSales.map(sale => sale.income)
               }
             ],
@@ -200,7 +225,7 @@ export default {
   width: 100%;
 }
 
-#tested{
+#tested {
   max-width: 720px;
   margin: 0 auto;
   text-align: center;

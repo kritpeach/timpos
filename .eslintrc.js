@@ -39,6 +39,7 @@ module.exports = {
     "comma-dangle": ["error", "never"],
     "quotes": 0,
     "no-console": 0,
-    "arrow-parens": 0
+    "arrow-parens": 0,
+    "max-len": 0
   }
 }
