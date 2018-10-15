@@ -59,6 +59,20 @@
               <pie-chart :height="350" :chart-data="salesByCategoryChart" :options="{ maintainAspectRatio: false, responsive: true, title: { display: true, text: 'Net revenue by category'} }"></pie-chart>
             </v-card>
           </v-flex>
+          <v-flex xs12 style="page-break-before: always">
+            <v-data-table
+            :headers="headers"
+            :items="statistic.sales"
+            hide-actions
+            class="elevation-1"
+            >
+              <template slot="items" slot-scope="props">
+                <td>{{ props.item.menuName }}</td>
+                <td>{{ props.item.quantity }}</td>
+                <td>{{ props.item.income }}</td>
+              </template>
+            </v-data-table>
+          </v-flex>
         </template>
       </v-layout>
     </v-container>
@@ -66,18 +80,28 @@
 </template>
 
 <script>
-import statistic from '../service/statistic';
-import categoryService from '../service/Category';
-import DatePicker from './DatePicker';
-import BarChart from './BarChart';
-import PieChart from './PieChart';
-import randomColor from '../util/ramdomColor';
+import statistic from "../service/statistic";
+import categoryService from "../service/Category";
+import DatePicker from "./DatePicker";
+import BarChart from "./BarChart";
+import PieChart from "./PieChart";
+import randomColor from "../util/ramdomColor";
 export default {
   data() {
     return {
+      headers: [
+        {
+          text: "Menu",
+          align: "left",
+          sortable: false,
+          value: "menuName"
+        },
+        { text: "Quantity", value: "quantity" },
+        { text: "Revenue", value: "income" }
+      ],
       startDate: null,
       endDate: null,
-      category: { name: 'All', id: '' },
+      category: { name: "All", id: "" },
       categoryList: [],
       loading: false,
       statistic: null,
@@ -88,28 +112,28 @@ export default {
         responsive: true,
         title: {
           display: true,
-          text: 'Top 10 Sales'
+          text: "Top 10 Sales"
         },
         scales: {
           yAxes: [
             {
-              id: 'Quantity',
+              id: "Quantity",
               gridLines: {
                 display: false
               },
-              type: 'linear',
-              position: 'left',
+              type: "linear",
+              position: "left",
               ticks: {
                 beginAtZero: true
               }
             },
             {
-              id: 'Revenue',
+              id: "Revenue",
               gridLines: {
                 display: false
               },
-              type: 'linear',
-              position: 'right',
+              type: "linear",
+              position: "right",
               ticks: {
                 beginAtZero: true
               }
@@ -127,7 +151,7 @@ export default {
   mounted() {
     const { restaurantId } = this.$route.params;
     categoryService.getAll(restaurantId).then(categoryList => {
-      this.categoryList = [{ name: 'All', id: '' }, ...categoryList];
+      this.categoryList = [{ name: "All", id: "" }, ...categoryList];
     });
     this.loadReport();
   },
@@ -157,9 +181,9 @@ export default {
           this.salesByCategoryChart = {
             datasets: [
               {
-                label: 'Revenue',
+                label: "Revenue",
                 backgroundColor: salesByCategory.map(sale => randomColor()),
-                yAxisID: 'Revenue',
+                yAxisID: "Revenue",
                 data: salesByCategory.map(sale => sale.income)
               }
             ],
@@ -169,15 +193,15 @@ export default {
           this.salesChart = {
             datasets: [
               {
-                label: 'Quantity',
-                backgroundColor: '#f87979',
-                yAxisID: 'Quantity',
+                label: "Quantity",
+                backgroundColor: "#f87979",
+                yAxisID: "Quantity",
                 data: topTenSales.map(sale => sale.quantity)
               },
               {
-                label: 'Revenue (Baht)',
-                backgroundColor: '#f81979',
-                yAxisID: 'Revenue',
+                label: "Revenue (Baht)",
+                backgroundColor: "#f81979",
+                yAxisID: "Revenue",
                 data: topTenSales.map(sale => sale.income)
               }
             ],
@@ -198,12 +222,5 @@ export default {
 
 .headline {
   width: 100%;
-}
-
-#tested{
-  max-width: 720px;
-  margin: 0 auto;
-  text-align: center;
-  color: aqua;
 }
 </style>
