@@ -12,9 +12,9 @@
         <v-flex xs3>
           <v-select prepend-icon="group_work" :items="categoryList" v-model="category" label="Select category" item-text="name" item-value="id" return-object single-line></v-select>
         </v-flex>
-        <v-flex xs12>
+        <v-flex xs3>
           <v-btn @click="loadReport" :loading="loading" depressed color="primary">Submit</v-btn>
-          <v-btn @click="print" depressed color="primary">Print</v-btn>
+         <!-- <v-btn @click="print" depressed color="primary">Print</v-btn> -->
           <v-btn @click="pdf" depressed color="primary">PDF</v-btn>
         </v-flex>
         <template v-if="statistic !== null">
