@@ -9,7 +9,7 @@ const openReport = (tableData, startDate, endDate, revenue, menuList) => {
       font: "THSarabun"
     },
     content: [
-      { text: "Menu report", style: "subheader" },
+      { text: "Sales report", style: "subheader" },
       `Order from ${startDate.toLocaleDateString()} to ${endDate.toLocaleDateString()}`,
       `Total revenue: ฿${revenue}`,
       {
