@@ -11,11 +11,11 @@ Feature('Overall');
 
 Scenario('One', (I) => {
   I.amOnPage(`${setting.url.staff}/#/signin`);
-  I.waitForElement('#app', 15);
+  I.waitForElement('#app');
   I.fillField('form input[type="text"]', 'tryumm');
   I.fillField('form input[type="password"]', '11111111');
   I.click('Sign in');
-  I.waitForElement('#app > div.application--wrap > div > main > div > button');
+  I.waitForElement('#app > div.application--wrap > div > main > div > button', 15);
   I.click('#app > div.application--wrap > div > main > div > button');
   I.fillField('#app > div.v-dialog__content.v-dialog__content--active form input[type="text"]', setting.billName);
   I.click('Create');
@@ -30,6 +30,7 @@ Scenario('One', (I) => {
   I.click("Send");
   I.amOnPage(`${setting.url.staff}/#/r/F6XJtEtDmJ0N60HNjWno/kitchen`);
   I.waitForText(setting.billName);
+  I.wait(5);
   I.executeScript(() => {
     document.querySelectorAll('.v-content__wrap [type="checkbox"]').forEach(e => e.click());
   });
