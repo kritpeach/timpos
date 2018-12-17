@@ -32,22 +32,12 @@
                     <v-text-field v-else v-model.trim="item.name" @keyup="onPriceFieldKeyUp" label="Size"></v-text-field>
                   </v-flex>
                   <v-flex xs5 :key="index + 'price'">
-                    <v-text-field v-if="index === 0" @keyup="onPriceFieldKeyUp" v-model.number="item.value" label="Price" step="0.01" prefix="฿" type="number" :rules="[v => !!v || 'Required']" required></v-text-field>
-                    <v-text-field v-else v-model.number="item.value" @keyup="onPriceFieldKeyUp" append-icon="delete" :append-icon-cb="() => onRemovePriceClick(index)" label="Price" step="0.01" prefix="฿" type="number"></v-text-field>
+                    <v-text-field v-if="index === 0" @keyup="onPriceFieldKeyUp" v-model.number="item.value" label="Price" step="0.01" prefix="฿" type="number" :rules="[v => !!v || 'Required', v => v >= 0 || 'Price must not be negative']" required></v-text-field>
+                    <v-text-field v-else v-model.number="item.value" @keyup="onPriceFieldKeyUp" append-icon="delete" :append-icon-cb="() => onRemovePriceClick(index)" label="Price" step="0.01" prefix="฿" type="number" :rules="[v => !!v || 'Required', v => v >= 0 || 'Price must not be negative']"></v-text-field>
                   </v-flex>
                 </template>
                 <v-flex xs12>
-                  <!-- <v-select v-model="managementDialog.form.prices" label="Prices" multiple tags chips required></v-select> -->
                   <v-select v-model="managementDialog.form.categories" label="Categories" multiple chips autocomplete :items="categoryListUI"></v-select>
-                  <!--
-                  <v-select v-model="managementDialog.form.menuOptions" append-icon="add_circle_outline" chips label="Options">
-                    <template slot="selection" slot-scope="data">
-                      <v-chip close @input="data.parent.selectItem(data.item)" :selected="data.selected" class="chip--select-multi" :key="JSON.stringify(data.item)">
-                        {{ data.item }}
-                      </v-chip>
-                    </template>
-                  </v-select>
-                  -->
                 </v-flex>
               </v-layout>
             </v-container>
@@ -55,10 +45,10 @@
           <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn color="primary" flat @click="managementDialog.show = false">Close</v-btn>
-            <v-btn v-if="managementDialog.mode === 'CREATE'" color="primary" :loading="creating" @click="create">Create</v-btn>
+            <v-btn v-if="managementDialog.mode === 'CREATE'" :disabled="!managementDialog.valid" color="primary" :loading="creating" @click="create">Create</v-btn>
             <template v-if="managementDialog.mode === 'EDIT'">
               <v-btn color="error" :loading="deleting" @click="remove">Delete</v-btn>
-              <v-btn color="primary" :loading="updating" @click="update">Update</v-btn>
+              <v-btn color="primary" :disabled="!managementDialog.valid" :loading="updating" @click="update">Update</v-btn>
             </template>
           </v-card-actions>
         </v-card>
