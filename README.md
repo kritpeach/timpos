@@ -8,6 +8,9 @@ username: tryumm
 
 password: 11111111
 
+### For Staff
+https://github.com/kritpeach/timposOrder
+
 ## Getting Started
 ### Prerequisites
 - Node.js 8.12
