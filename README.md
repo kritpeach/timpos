@@ -8,7 +8,7 @@ username: tryumm
 
 password: 11111111
 
-### For Staff
+### For staff
 https://github.com/kritpeach/timposOrder
 
 ## Getting Started
